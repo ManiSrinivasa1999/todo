@@ -2,7 +2,7 @@
   "name": "todo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./assets/js/app.js",
   "dependencies": {
     "eslint": "^6.6.0"
   },
