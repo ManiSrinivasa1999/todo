@@ -1,56 +1,29 @@
-/*(
-  document.onreadystatechange = () => {
-    if(document.readyState === 'complete') {  
-      const data = {
-        pendingtasks : [],
-        completetasks : [] 
-      };
-      const View = {
-        init : () => {
-          View.update();
-        },
-        update : () => {
-          const task = document.getElementById("task").value;
-          
-        },
-      };
-      const controller = {
-        pressenter : () => {
-                    
-        },
-        init : () => {
-          View.init();
-        },
-      };
-      controller.init();
-    }
-  }
-)();*/
 (
   document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
       const model = {
-        pendingtasks : [],
-        completedtasks : []
+      
       };
-      const View = {
+      const view = {
         init : () => {
-          View.update();
+          view.render();
         },
-        update : () => {
-          const task = document.getElementById("task").value;
-          //console.log(task);
+        render : () => {
+          const addTask=document.getElementById("task").value; //getting the value
+          addTask.onkeypress = () => {
+            controller.addTaskValue();
+          }
         }
       };
       const controller = {
-        pressenter : () => {
-          task.onkeypress;
+        addTaskValue : () => {
+
         },
         init : () => {
-          View.init();
-        },
+          view.init();
+        }
       };
       controller.init();
     }
   }
-)();
+)();//anonymous function
