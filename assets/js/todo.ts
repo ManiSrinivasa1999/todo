@@ -9,10 +9,10 @@
           view.render();
         },
         render : () => {
-          const addTask=document.getElementById("task").value; //getting the value
-          addTask.onkeypress = () => {
+          const addTask=document.getElementById("task") as HTMLDivElement; //getting the value
+          /*addTask.onkeypress = () => {
             controller.addTaskValue();
-          }
+          }*/
         }
       };
       const controller = {
