@@ -10,14 +10,12 @@
         },
         render : () => {
           const addTask=document.getElementById("task") as HTMLDivElement; //getting the value
-          /*addTask.onkeypress = () => {
-            controller.addTaskValue();
-          }*/
+          
         }
       };
       const controller = {
         addTaskValue : () => {
-
+          document.write('addTask');
         },
         init : () => {
           view.init();
