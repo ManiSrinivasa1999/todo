@@ -1,0 +1,13 @@
+#profile-picture {
+  width: 48px !important;
+  max-height:  48px !important;
+}
+#task-list {
+  height : 75vh;
+}
+#doing-list {
+  height: 75vh;
+}
+#done-list {
+  height: 75vh;
+}

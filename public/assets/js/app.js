@@ -1,5 +1,4 @@
 import {firebaseConfig} from './config.js';
-import * as firebase from 'firebase';
 (
   document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
@@ -9,6 +8,7 @@ import * as firebase from 'firebase';
           view.render();
         },
         render: () => {
+
         },
       };
       const controller = {
@@ -16,20 +16,24 @@ import * as firebase from 'firebase';
           view.init();
         },
       };
-      // const firebase = require('firebase');
       firebase.initializeApp(firebaseConfig);
-      const ui = new firebase.auth.AuthUI(firebase.auth());
+      const ui = new firebaseui.auth.AuthUI(firebase.auth());
       ui.start('#firebaseui-auth-container', {
         signInOptions: [
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          {
-            provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-            defaultCountry: 'IN',
-          },
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
         ],
         signInSuccessUrl: './user.html',
+        // Other config options...
       });
-      controller.init();
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          controller.init();
+        } else {
+          // No user is signed in.
+        }
+      });
     }
   }
-)();// anonymous function
+)();
