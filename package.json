@@ -1,10 +1,11 @@
 {
   "name": "todo",
   "version": "1.0.0",
-  "description": "",
+  "description": "## MVC Pattern for Javascript",
   "main": "./assets/js/app.js",
   "dependencies": {
     "firebase": "^7.14.1",
+    "lodash": "^4.17.19",
     "save": "^2.4.0",
     "typescript": "^3.8.3"
   },
